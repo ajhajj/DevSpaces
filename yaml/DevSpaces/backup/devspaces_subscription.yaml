@@ -1,0 +1,79 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  creationTimestamp: "2024-09-26T18:06:16Z"
+  generation: 1
+  labels:
+    operators.coreos.com/devspaces.openshift-operators: ""
+  name: devspaces
+  namespace: openshift-operators
+  resourceVersion: "35930"
+  uid: 595734c6-e180-4969-8aec-ba84ab8c5c7d
+spec:
+  channel: stable
+  installPlanApproval: Automatic
+  name: devspaces
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: devspacesoperator.v3.16.1
+status:
+  catalogHealth:
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: certified-operators
+      namespace: openshift-marketplace
+      resourceVersion: "34248"
+      uid: 7bf3af65-b07b-4740-8c0d-8b5404491a2c
+    healthy: true
+    lastUpdated: "2024-09-26T18:07:25Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: community-operators
+      namespace: openshift-marketplace
+      resourceVersion: "34611"
+      uid: 0fa06079-6260-4443-ac04-15a5bd095c18
+    healthy: true
+    lastUpdated: "2024-09-26T18:07:25Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: redhat-marketplace
+      namespace: openshift-marketplace
+      resourceVersion: "34532"
+      uid: 274a881d-e0b1-4a47-99fb-b4f95d0fcb27
+    healthy: true
+    lastUpdated: "2024-09-26T18:07:25Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: redhat-operators
+      namespace: openshift-marketplace
+      resourceVersion: "34252"
+      uid: 7a2e54fe-d0ca-494c-baff-1d32c1b88593
+    healthy: true
+    lastUpdated: "2024-09-26T18:07:25Z"
+  conditions:
+  - lastTransitionTime: "2024-09-26T18:07:25Z"
+    message: all available catalogsources are healthy
+    reason: AllCatalogSourcesHealthy
+    status: "False"
+    type: CatalogSourcesUnhealthy
+  currentCSV: devspacesoperator.v3.16.1
+  installPlanGeneration: 1
+  installPlanRef:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-lv2v2
+    namespace: openshift-operators
+    resourceVersion: "34869"
+    uid: 6d7367e7-c471-4bfe-b218-01caaf384a17
+  installedCSV: devspacesoperator.v3.16.1
+  installplan:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-lv2v2
+    uuid: 6d7367e7-c471-4bfe-b218-01caaf384a17
+  lastUpdated: "2024-09-26T18:07:25Z"
+  state: AtLatestKnown

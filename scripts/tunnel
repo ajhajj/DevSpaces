@@ -1,0 +1,4 @@
+#!/bin/sh
+
+source ./common_cfg > /dev/null 2>&1
+ssh ${BASTION_ID}@${BASTION_SERVER} -L 6443:${API_SERVER} -N

@@ -1,0 +1,124 @@
+apiVersion: operators.coreos.com/v1
+kind: Operator
+metadata:
+  creationTimestamp: "2024-09-26T18:06:16Z"
+  generation: 1
+  name: devspaces.openshift-operators
+  resourceVersion: "35932"
+  uid: f6cf7d31-f3bc-4eaf-92b5-795cc51e4c16
+spec: {}
+status:
+  components:
+    labelSelector:
+      matchExpressions:
+      - key: operators.coreos.com/devspaces.openshift-operators
+        operator: Exists
+    refs:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: devspacesoperator.v3.16.-9QkcuL74bJ1k0yBSEWACf4jp3vawNyoxH1DdJY
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: devspacesoperator.v3.16.1-82BWf97iqgNeAd3ak8pskn4zLumRuCHHgz5Afs
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: devspaces-operator-service-system:auth-delegator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: devspacesoperator.v3.16.-9QkcuL74bJ1k0yBSEWACf4jp3vawNyoxH1DdJY
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: devspacesoperator.v3.16.1-82BWf97iqgNeAd3ak8pskn4zLumRuCHHgz5Afs
+    - apiVersion: operators.coreos.com/v1alpha1
+      conditions:
+      - lastTransitionTime: "2024-09-26T18:07:33Z"
+        lastUpdateTime: "2024-09-26T18:07:33Z"
+        message: install strategy completed with no errors
+        reason: InstallSucceeded
+        status: "True"
+        type: Succeeded
+      kind: ClusterServiceVersion
+      name: devspacesoperator.v3.16.1
+      namespace: openshift-operators
+    - apiVersion: apiextensions.k8s.io/v1
+      conditions:
+      - lastTransitionTime: "2024-09-26T18:07:08Z"
+        message: no conflicts found
+        reason: NoConflicts
+        status: "True"
+        type: NamesAccepted
+      - lastTransitionTime: "2024-09-26T18:07:08Z"
+        message: the initial names have been accepted
+        reason: InitialNamesAccepted
+        status: "True"
+        type: Established
+      kind: CustomResourceDefinition
+      name: checlusters.org.eclipse.che
+    - apiVersion: apps/v1
+      conditions:
+      - lastTransitionTime: "2024-09-26T18:07:33Z"
+        lastUpdateTime: "2024-09-26T18:07:33Z"
+        message: Deployment has minimum availability.
+        reason: MinimumReplicasAvailable
+        status: "True"
+        type: Available
+      - lastTransitionTime: "2024-09-26T18:07:12Z"
+        lastUpdateTime: "2024-09-26T18:07:33Z"
+        message: ReplicaSet "devspaces-operator-756bccddfb" has successfully progressed.
+        reason: NewReplicaSetAvailable
+        status: "True"
+        type: Progressing
+      kind: Deployment
+      name: devspaces-operator
+      namespace: openshift-operators
+    - apiVersion: operators.coreos.com/v1alpha1
+      conditions:
+      - lastTransitionTime: "2024-09-26T18:07:11Z"
+        lastUpdateTime: "2024-09-26T18:07:11Z"
+        status: "True"
+        type: Installed
+      kind: InstallPlan
+      name: install-lv2v2
+      namespace: openshift-operators
+    - apiVersion: operators.coreos.com/v2
+      kind: OperatorCondition
+      name: devspacesoperator.v3.16.1
+      namespace: openshift-operators
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: devspaces-operator-service-cert
+      namespace: openshift-operators
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: devspacesoperator.v3.16.-9QkcuL74bJ1k0yBSEWACf4jp3vawNyoxH1DdJY
+      namespace: openshift-operators
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: devspaces-operator-service-cert
+      namespace: openshift-operators
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: devspacesoperator.v3.16.-9QkcuL74bJ1k0yBSEWACf4jp3vawNyoxH1DdJY
+      namespace: openshift-operators
+    - apiVersion: v1
+      kind: Secret
+      name: devspaces-operator-service-cert
+      namespace: openshift-operators
+    - apiVersion: v1
+      kind: Service
+      name: devspaces-operator-service
+      namespace: openshift-operators
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: devspaces-operator
+      namespace: openshift-operators
+    - apiVersion: operators.coreos.com/v1alpha1
+      conditions:
+      - lastTransitionTime: "2024-09-26T18:07:25Z"
+        message: all available catalogsources are healthy
+        reason: AllCatalogSourcesHealthy
+        status: "False"
+        type: CatalogSourcesUnhealthy
+      kind: Subscription
+      name: devspaces
+      namespace: openshift-operators

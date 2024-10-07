@@ -1,0 +1,55 @@
+schemaVersion: 2.2.2
+metadata:
+  name: quarkus-quickstart
+  namespace: kubeadmin-devspaces
+projects:
+  - name: quarkus-quickstarts
+    zip:
+      location: http://devspaces-dashboard.openshift-devspaces.svc:8080/dashboard/api/airgap-sample/project/download?id=quarkus-rest-api
+components:
+  - name: tools
+    container:
+      image: registry.redhat.io/devspaces/udi-rhel8@sha256:9199796c9dd82a16ebb2c4ff8d06b9727f392eb93eb7ffa2974ad6c16e3d8e5d
+      env:
+        - name: QUARKUS_HTTP_HOST
+          value: 0.0.0.0
+      endpoints:
+        - exposure: none
+          name: debug
+          protocol: tcp
+          targetPort: 5005
+        - exposure: public
+          name: hello-greeting
+          protocol: https
+          targetPort: 8080
+          path: /hello/greeting/devspaces-user
+      volumeMounts:
+        - name: m2
+          path: /home/user/.m2
+      cpuLimit: '4'
+      cpuRequest: '1'
+      memoryLimit: 8G
+      memoryRequest: 4G
+      mountSources: true
+  - name: m2
+    volume:
+      size: 1G
+commands:
+  - id: 1-package
+    exec:
+      label: 1. Package the application
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/quarkus-quickstarts/getting-started
+      commandLine: mvn package
+      group:
+        kind: build
+        isDefault: true
+  - id: 2-startdev
+    exec:
+      label: 2. Start Development mode (Hot reload + debug)
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/quarkus-quickstarts/getting-started
+      commandLine: mvn compile quarkus:dev
+      group:
+        kind: run
+        isDefault: true

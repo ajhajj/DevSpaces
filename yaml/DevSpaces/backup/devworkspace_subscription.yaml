@@ -1,0 +1,81 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  annotations:
+    olm.generated-by: install-lv2v2
+  creationTimestamp: "2024-09-26T18:07:03Z"
+  generation: 1
+  labels:
+    olm.managed: "true"
+    operators.coreos.com/devworkspace-operator.openshift-operators: ""
+  name: devworkspace-operator-fast-redhat-operators-openshift-marketplace
+  namespace: openshift-operators
+  resourceVersion: "36245"
+  uid: 09024084-db51-4f46-b063-d079c964aeb6
+spec:
+  channel: fast
+  installPlanApproval: Automatic
+  name: devworkspace-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: devworkspace-operator.v0.30.2
+status:
+  catalogHealth:
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: certified-operators
+      namespace: openshift-marketplace
+      resourceVersion: "34248"
+      uid: 7bf3af65-b07b-4740-8c0d-8b5404491a2c
+    healthy: true
+    lastUpdated: "2024-09-26T18:08:24Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: community-operators
+      namespace: openshift-marketplace
+      resourceVersion: "34611"
+      uid: 0fa06079-6260-4443-ac04-15a5bd095c18
+    healthy: true
+    lastUpdated: "2024-09-26T18:08:24Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: redhat-marketplace
+      namespace: openshift-marketplace
+      resourceVersion: "34532"
+      uid: 274a881d-e0b1-4a47-99fb-b4f95d0fcb27
+    healthy: true
+    lastUpdated: "2024-09-26T18:08:24Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: redhat-operators
+      namespace: openshift-marketplace
+      resourceVersion: "34252"
+      uid: 7a2e54fe-d0ca-494c-baff-1d32c1b88593
+    healthy: true
+    lastUpdated: "2024-09-26T18:08:24Z"
+  conditions:
+  - lastTransitionTime: "2024-09-26T18:08:24Z"
+    message: all available catalogsources are healthy
+    reason: AllCatalogSourcesHealthy
+    status: "False"
+    type: CatalogSourcesUnhealthy
+  currentCSV: devworkspace-operator.v0.30.2
+  installPlanRef:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-lv2v2
+    namespace: openshift-operators
+    resourceVersion: "34872"
+    uid: 6d7367e7-c471-4bfe-b218-01caaf384a17
+  installedCSV: devworkspace-operator.v0.30.2
+  installplan:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-lv2v2
+    uuid: 6d7367e7-c471-4bfe-b218-01caaf384a17
+  lastUpdated: "2024-09-26T18:08:24Z"
+  state: AtLatestKnown
